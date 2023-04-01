@@ -86,10 +86,10 @@ jobs:
           command: >
             "echo eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
             <<parameters.platform-version>>"
-            eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
-            <<parameters.platform-version>>
-            eb create development-env
-            eb status
+            # eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
+            # <<parameters.platform-version>>
+            # eb create development-env
+            # eb status
             # eb deploy 'development-env' <<#parameters.label>>-l
             # <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
             # <<parameters.description>><</parameters.description>>
