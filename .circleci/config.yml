@@ -83,10 +83,12 @@ jobs:
       - checkout
       - eb/setup
       - run:
-          command: >
-            eb init
+          command: eb use <<parameters.environment-name>>
+      - run:
+          command: eb init -r $AWS_DEFAULT_REGION -p <<parameters.platform-version>>
+          # command: >
             # eb use <<parameters.environment-name>> -r $AWS_DEFAULT_REGION
-            # eb init -p <<parameters.platform-version>>
+            # eb init -r $AWS_DEFAULT_REGION -p <<parameters.platform-version>>
             # eb status
             # eb deploy
             # eb status
