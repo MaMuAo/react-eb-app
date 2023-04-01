@@ -60,7 +60,7 @@ jobs:
         description: The name of the existing environment (created with `eb create`) to update.
         type: string
       image:
-        default: 'circleci/ruby:2.6.5-node-browsers'
+        default: 'cimg/base:stable'
         description: >-
           Enter a custom docker image for this job. By default CircleCI's optimized
           `cimg/base` image will be used.
@@ -87,9 +87,7 @@ jobs:
             eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
             <<parameters.platform-version>>
 
-            eb deploy <<parameters.environment-name>> <<#parameters.label>>-l
-            <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
-            <<parameters.description>><</parameters.description>>
+            eb deploy development-env
           name: EB Deploy
           working_directory: <<parameters.app-dir>>
 
