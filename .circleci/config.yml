@@ -81,7 +81,7 @@ jobs:
         type: string
     steps:
       - checkout
-      - setup
+      - eb/setup
   #     - run:
   #         command: >
   #           "echo eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
