@@ -73,7 +73,7 @@ jobs:
           with that label.
         type: string
       platform-version:
-        default: docker
+        default: Docker running on 64bit Amazon Linux 2
         description: >-
           The platform version to use. You can specify a platform, a platform and
           version, a platform branch, a solution stack name, or a solution stack
