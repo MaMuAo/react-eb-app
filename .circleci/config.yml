@@ -73,7 +73,7 @@ jobs:
           with that label.
         type: string
       platform-version:
-        default: node.js
+        default: docker
         description: >-
           The platform version to use. You can specify a platform, a platform and
           version, a platform branch, a solution stack name, or a solution stack
@@ -84,9 +84,12 @@ jobs:
       - setup
       - run:
           command: >
-            eb init
+            eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
+            <<parameters.platform-version>>
 
-            eb deploy --staged
+            eb deploy <<parameters.environment-name>> <<#parameters.label>>-l
+            <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
+            <<parameters.description>><</parameters.description>>
           name: EB Deploy
           working_directory: <<parameters.app-dir>>
 
