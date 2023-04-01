@@ -46,7 +46,7 @@ jobs:
           the current directory will be used.
         type: string
       application-name:
-        default: react-eb-app
+        default: 'react-eb-app'
         description: The name of the application (used during `eb init`).
         type: string
       description:
@@ -56,7 +56,7 @@ jobs:
           marks.
         type: string
       environment-name:
-        default: --staged
+        default: ''
         description: The name of the existing environment (created with `eb create`) to update.
         type: string
       image:
