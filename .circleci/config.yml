@@ -84,8 +84,8 @@ jobs:
       - setup
       - run:
           command: >
-            eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
-            <<parameters.platform-version>>
+            eb init 'react-eb-app' -r $AWS_DEFAULT_REGION -p
+            Docker running on 64bit Amazon Linux 2
 
             eb deploy <<parameters.environment-name>> <<#parameters.label>>-l
             <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
