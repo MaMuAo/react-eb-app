@@ -73,7 +73,7 @@ jobs:
           with that label.
         type: string
       platform-version:
-        default: Docker running on 64bit Amazon Linux 2
+        default: node.js
         description: >-
           The platform version to use. You can specify a platform, a platform and
           version, a platform branch, a solution stack name, or a solution stack
@@ -84,8 +84,8 @@ jobs:
       - eb/setup
       - run:
           command: >
-            eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
-            <<parameters.platform-version>>
+            eb use development-env -r $AWS_DEFAULT_REGION -p <<parameters.platform-version>>
+            eb init 
   #           # eb create development-env
   #           # eb status
   #           # eb deploy 'development-env' <<#parameters.label>>-l
