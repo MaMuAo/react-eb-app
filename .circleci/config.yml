@@ -82,12 +82,12 @@ jobs:
     steps:
       - checkout
       - eb/setup
-  #     - run:
-  #         command: >
-  #           "echo eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
-  #           <<parameters.platform-version>>"
-  #           # eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
-  #           # <<parameters.platform-version>>
+      - run:
+          command: >
+            "echo eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
+            <<parameters.platform-version>>"
+            eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
+            <<parameters.platform-version>>
   #           # eb create development-env
   #           # eb status
   #           # eb deploy 'development-env' <<#parameters.label>>-l
