@@ -38,7 +38,7 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       - checkout
-      - eb/setup
+      - aws-elastic-beanstalk/setup
       - run:
           command: |
             eb create my-environment
