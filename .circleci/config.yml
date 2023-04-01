@@ -79,8 +79,8 @@ jobs:
           version, a platform branch, a solution stack name, or a solution stack
           ARN. Use 'eb platform list' to get a list of available configurations.
         type: string
-  #   steps:
-  #     - checkout
+    steps:
+      - checkout
   #     - eb/setup
   #     - run:
   #         command: >
