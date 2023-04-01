@@ -93,7 +93,7 @@ jobs:
   #           # eb deploy 'development-env' <<#parameters.label>>-l
   #           # <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
   #           # <<parameters.description>><</parameters.description>>
-  #         name: EB Deploy
+  #         name: EEEEB Deploy
   #         working_directory: <<parameters.app-dir>>
 
   # eb-demo:
