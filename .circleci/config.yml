@@ -100,8 +100,8 @@ jobs:
       - eb/setup
       - run:
           command: |
-            eb create my-environment
-            eb deploy my-environment
+            eb create --staged
+            eb deploy --staged
             eb status
           name: You may now use the EB CLI within this job
 
