@@ -195,8 +195,8 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-  run-build:
-    jobs:
+  # run-build:
+  #   jobs:
       # - build
       # - eb/deploy:
       #     # requires:
