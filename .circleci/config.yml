@@ -194,6 +194,6 @@ workflows:
       - say-hello
   run-build:
     jobs:
-      # - build
+      - build
       - eb/deploy:
           context: AWS
