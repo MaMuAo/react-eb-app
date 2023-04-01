@@ -92,18 +92,18 @@ jobs:
             <<parameters.description>><</parameters.description>>
           name: EB Deploy
           working_directory: <<parameters.app-dir>>
-  eb-demo:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - checkout
-      - eb/setup
-      - run:
-          command: |
-            eb create
-            eb deploy
-            eb status
-          name: You may now use the EB CLI within this job
+  # eb-demo:
+  #   docker:
+  #     - image: 'cimg/base:stable'
+  #   steps:
+  #     - checkout
+  #     - eb/setup
+  #     - run:
+  #         command: |
+  #           eb create
+  #           eb deploy
+  #           eb status
+  #         name: You may now use the EB CLI within this job
 
 description: >
   Install and authenticate with the Elastic Beanstalk CLI. You must have your
@@ -194,5 +194,6 @@ workflows:
   run-build:
     jobs:
       # - build
-      - eb-demo:
+      # - eb-demo:
+      - deploy:
           context: AWS
