@@ -25,8 +25,9 @@ jobs:
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
+      - run: whoami
       - run:
-          command: corepack enable
+          command: corepack enable --prefer-offline --no-audit --progress=false`
           name: Package manager
       - run:
           command: yarn install --immutable
