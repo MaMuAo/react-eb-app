@@ -84,15 +84,17 @@ jobs:
       - eb/setup
       - run:
           command: >
-            eb use development-env -r $AWS_DEFAULT_REGION
+            eb use <<parameters.environment-name>> -r $AWS_DEFAULT_REGION
             eb init -p <<parameters.platform-version>>
-  #           # eb create development-env
             eb status
+            eb deploy
+            eb status
+  #           # eb create development-env
   #           # eb deploy 'development-env' <<#parameters.label>>-l
   #           # <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
   #           # <<parameters.description>><</parameters.description>>
-  #         name: EB Deploy
-  #         working_directory: <<parameters.app-dir>>
+          name: EB Deploy
+          working_directory: <<parameters.app-dir>>
 
   # eb-demo:
   #   docker:
