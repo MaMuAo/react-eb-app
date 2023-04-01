@@ -87,11 +87,7 @@ jobs:
             eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
             <<parameters.platform-version>>
 
-            eb use <<parameters.environment-name>>
-
-            eb deploy <<parameters.environment-name>> <<#parameters.label>>-l
-            <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
-            <<parameters.description>><</parameters.description>>
+            eb deploy --staged
           name: EB Deploy
           working_directory: <<parameters.app-dir>>
 
