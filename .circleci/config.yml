@@ -84,11 +84,12 @@ jobs:
       - eb/setup
       - run:
           command: >
-            eb use <<parameters.environment-name>> -r $AWS_DEFAULT_REGION
-            eb init -p <<parameters.platform-version>>
-            eb status
-            eb deploy
-            eb status
+            eb init
+            # eb use <<parameters.environment-name>> -r $AWS_DEFAULT_REGION
+            # eb init -p <<parameters.platform-version>>
+            # eb status
+            # eb deploy
+            # eb status
   #           # eb create development-env
   #           # eb deploy 'development-env' <<#parameters.label>>-l
   #           # <<parameters.label>><</parameters.label>> <<#parameters.description>>-m
