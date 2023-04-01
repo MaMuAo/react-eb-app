@@ -81,7 +81,7 @@ jobs:
         type: string
     steps:
       - checkout
-      - setup
+      - eb/setup
       - run:
           command: >
             "echo eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
@@ -197,8 +197,8 @@ workflows:
       - say-hello
   run-build:
     jobs:
-      - build
+      # - build
       - eb/deploy:
-          requires:
-            - build
+          # requires:
+          #   - build
           context: AWS
