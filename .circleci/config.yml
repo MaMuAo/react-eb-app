@@ -83,6 +83,8 @@ jobs:
       - checkout
       - setup
       - run:
+          command: "echo eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
+            <<parameters.platform-version>>"
           command: >
             eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
             <<parameters.platform-version>>
