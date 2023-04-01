@@ -33,18 +33,6 @@ jobs:
       - run:
           command: npm run build
           name: Build app
-  eb-demo:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - checkout
-      - aws-elastic-beanstalk/setup
-      - run:
-          command: |
-            eb create my-environment
-            eb deploy my-environment
-            eb status
-          name: You may now use the EB CLI within this job
   deploy:
     description: |
       Deploy an update to an existing AWS Elastic Beanstalk environment.
@@ -104,6 +92,19 @@ jobs:
             <<parameters.description>><</parameters.description>>
           name: EB Deploy
           working_directory: <<parameters.app-dir>>
+  eb-demo:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - aws-elastic-beanstalk/setup
+      - run:
+          command: |
+            eb create my-environment
+            eb deploy my-environment
+            eb status
+          name: You may now use the EB CLI within this job
+
 description: >
   Install and authenticate with the Elastic Beanstalk CLI. You must have your
   AWS auth environment variables set for ["AWS_ACCESS_KEY_ID",
