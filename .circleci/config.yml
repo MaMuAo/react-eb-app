@@ -135,5 +135,5 @@ workflows:
   run-build:
     jobs:
       # - build
-      - eb-demo
+      - eb-demo:
           context: AWS
