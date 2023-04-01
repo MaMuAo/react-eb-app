@@ -84,8 +84,7 @@ jobs:
       - setup
       - run:
           command: >
-            eb init <<parameters.application-name>> -r $AWS_DEFAULT_REGION -p
-            <<parameters.platform-version>>
+            eb init
 
             eb deploy --staged
           name: EB Deploy
